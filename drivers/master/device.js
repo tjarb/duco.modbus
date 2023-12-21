@@ -1,15 +1,11 @@
 'use strict';
 
 const { Device } = require('homey');
-//const modbus = require('jsmodbus');
 const net = require('net');
 const decodeData = require('../../lib/decodeData.js');
-//const socket = new net.Socket();
-
-
 
 class DucoMasterModbusDevice extends Device {
-	/*constructor?*/
+
     async onInit() {
         let self = this;
 		
