@@ -1,0 +1,44 @@
+{
+  "id": "Ducofocus.modbus",
+  "sdk": 3,
+
+  "version": "0.1.0",
+
+  "compatibility": ">=5.0.0",
+  "name": {
+    "en": "Ducobox fucus"
+  },
+  "description": {
+    "en": "World of Oxygen."
+  },
+  "category": "energy",
+  "tags": {
+    "en": [
+      "duco",
+      "ventilation",
+      "modbus",
+      "energy",
+      "focus"
+    ]
+  },
+  "author": {
+    "name": "tjarb"
+  },
+  "contributors": {},
+  "bugs": {
+    "url": "https://github.com/tjarb/duco.modbus/issues"
+  },
+  "source": "https://github.com/tjarb/duco.modbus",
+  "homeyCommunityTopicId": 0,
+  "images": {
+    "xlarge": "./assets/images/xlarge.png",
+    "large": "./assets/images/large.png",
+    "small": "./assets/images/small.png"
+  },
+  "brandColor": "#66cc62",
+  "dependencies": {
+    "net": "*"
+  }
+
+}
+
