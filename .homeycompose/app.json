@@ -1,9 +1,7 @@
 {
   "id": "Ducofocus.modbus",
   "sdk": 3,
-
-  "version": "0.1.0",
-
+  "version": "0.1.1",
   "compatibility": ">=5.0.0",
   "name": {
     "en": "Ducobox fucus"
@@ -39,6 +37,4 @@
   "dependencies": {
     "net": "*"
   }
-
 }
-

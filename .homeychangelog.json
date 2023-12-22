@@ -1,5 +1,8 @@
 {
   "0.1.0": {
     "en": "Initial release for Duco ventilation box (focus, silence) using Modbus TCP"
+  },
+  "0.1.1": {
+    "en": "cleanup unused flows"
   }
 }
