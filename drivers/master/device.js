@@ -215,8 +215,8 @@ class DucoMasterModbusDevice extends Device {
                     }
 
 						
-//            }, self.getSetting('polling') * 1000);
-			  }, 2000);
+            }, self.getSetting('polling') * 1000);
+
 		
 		
 		//this.setupCapabilityListeners();

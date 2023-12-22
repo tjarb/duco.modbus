@@ -1,5 +1,5 @@
 {
   "0.1.0": {
-    "en": "Initial release for Duco focus Modbus
+    "en": "Initial release for Duco ventilation box (focus, silence) using Modbus TCP"
   }
 }
