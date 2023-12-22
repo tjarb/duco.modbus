@@ -10,16 +10,16 @@ class DucoMasterModbusDevice extends Device {
         let self = this;
 		
         // Register device triggers, as defined in ./driver.flow.compose.json
-        self._changedOperationalStatus = self.homey.flow.getDeviceTriggerCard('changedOperationalStatus');		//As defined in driver.flow.compose.json
-        self._changedSessionYield = self.homey.flow.getDeviceTriggerCard('changedSessionYield');
-        self._changedChargePower = self.homey.flow.getDeviceTriggerCard('changedChargePower');
-        self._changedCurrent_L1 = self.homey.flow.getDeviceTriggerCard('changedCurrentL1');
-		self._changedPower_L1 = self.homey.flow.getDeviceTriggerCard('changedPowerL1');
-		self._changedVoltage_L1 = self.homey.flow.getDeviceTriggerCard('changedVoltageL1');
-		self._changedChargerLimit = self.homey.flow.getDeviceTriggerCard('changedChargerLimit');
-		self._changedEV_capability = self.homey.flow.getDeviceTriggerCard('changedEV_capability');
-		self._changedYield = self.homey.flow.getDeviceTriggerCard('changedYield');
-        self._changedRequiredEnergy = self.homey.flow.getDeviceTriggerCard('changedRequiredEnergy');
+        //self._changedOperationalStatus = self.homey.flow.getDeviceTriggerCard('changedOperationalStatus');		
+//        self._changedSessionYield = self.homey.flow.getDeviceTriggerCard('changedSessionYield');
+        //self._changedChargePower = self.homey.flow.getDeviceTriggerCard('changedChargePower');
+//        self._changedCurrent_L1 = self.homey.flow.getDeviceTriggerCard('changedCurrentL1');
+		//self._changedPower_L1 = self.homey.flow.getDeviceTriggerCard('changedPowerL1');
+		//self._changedVoltage_L1 = self.homey.flow.getDeviceTriggerCard('changedVoltageL1');
+		//self._changedChargerLimit = self.homey.flow.getDeviceTriggerCard('changedChargerLimit');
+		//self._changedEV_capability = self.homey.flow.getDeviceTriggerCard('changedEV_capability');
+		//self._changedYield = self.homey.flow.getDeviceTriggerCard('changedYield');
+        //self._changedRequiredEnergy = self.homey.flow.getDeviceTriggerCard('changedRequiredEnergy');
 	
 		
 		
