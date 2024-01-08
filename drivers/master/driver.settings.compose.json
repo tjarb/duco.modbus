@@ -2,9 +2,9 @@
     {
         "type": "group",
         "label": {
-            "en": "Mennekes Amtron settings",
-            "nl": "Mennekes Amtron instellingen",
-            "sv": "Mennekes Amtron inställningar"
+            "en": "Duco settings",
+            "nl": "Duco instellingen",
+            "sv": "Duco inställningar"
         },
         "children": [
             {
@@ -31,11 +31,11 @@
             {
                 "id": "polling",
                 "type": "number",
-                "value": 1,
-                "step": 0.5,
+                "value": 30,
+                "step":  1,
                 "attr": {
-                    "min": 0.5,
-                    "max": 5
+                    "min": 5,
+                    "max": 3600
                 },
                 "label": {
                     "en": "Polling",

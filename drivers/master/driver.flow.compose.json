@@ -23,49 +23,6 @@
           "example": "Occupied"
         }
       ]  
-    },
-    {
-      "id": "changedPower",
-      "title": {
-        "en": "Power consumption changed (W)"
-      },
-      "titleFormatted": {
-        "en": "Power consumption changed to [[charging]]W"
-      },
-      "tokens": [
-        {
-          "name": "charging",
-          "type": "number",
-          "title": {
-            "en": "Concumption (W)"
-          },
-          "example": 18
-        }
-      ]
-    },
-	{
-      "id": "changedLevelLowerLimit",
-      "title": {
-        "en": "Charge current limit changed (A)",
-        "nl": "Charge current limit changed (A)",
-        "sv": "Charge current limit changed (A)"
-      },
-      "titleFormatted": {
-        "en": "Charge current limit changed [[current]]A",
-        "sv": "Charge current limit changed [[current]]A"
-      },
-      "tokens": [
-        {
-          "name": "current",
-          "type": "number",
-          "title": {
-            "en": "Charge current limit (A)",
-            "nl": "Charge current limit (A)",
-            "sv": "Charge current limit (A)"
-          },
-          "example": 32
-        }
-      ]
     }
   ],
   "conditions": [

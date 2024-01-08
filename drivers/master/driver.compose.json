@@ -11,14 +11,7 @@
   },
   "class": "other",
   "capabilities": [
-	"operational_status",
-	"operational_status.type",
-	"flow_level",
-	"flow_level.low",
-	"flow_level.high",
-	"measure_power.actual",
-	"measure_power.avg",
-	"measure_power.max"
+	
   ],
   "capabilitiesOptions": {
     "operational_status": {
@@ -64,8 +57,17 @@
       }
   }},
    "pair": [
-    {
+	{
       "id": "start"
+    },
+    {
+      "id": "list_devices",      
+      "template": "list_devices",
+      "navigation": { "next": "add_devices" }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
     }
   ]
 }

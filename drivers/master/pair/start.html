@@ -5,48 +5,61 @@
   $(function () {
     $('#connect').click(function () {
       $('.duco-error').hide();
-
+		
       var inputaddress = $('#address').val();
       var inputport = Number($('#port').val());
       var inputpolling = Number($('#polling').val());
+	  var inputmodbus_id = Number($('#modbus_id').val());
 
-      if (inputaddress != '' && inputport != '' && inputpolling != '') {
-        var device_data = {
-          id: inputaddress
-        };
+      if (inputaddress != '' && inputport != '' && inputpolling != '' && inputmodbus_id != '') {
+			var device_data = {
+			  id: inputaddress
+			};
 
-        var settings = {
-          address: inputaddress,
-          port: inputport,
-          polling: inputpolling
-        };
+			var settings = {
+			  address: inputaddress,
+			  port: inputport,
+			  polling: inputpolling,
+			  modbus_id: inputmodbus_id
+			};
+			
+			Homey.emit('settings', settings).then(function (result) {
+						console.log(result);
+						if (!result) {
+							$('.duco-error').show();
+							$('.duco-error-msg').html('Failed to connect to the Duco mastser!');
+						}
+			});
+			/*
+			Homey.addDevice({
+			  name: "duco ",
+			  data: device_data,
+			  settings: settings
+			})
+			  .then(function (result) {
+				$('.duco-error').hide();
+				Homey.done();
+			  })
+			  .catch(function (error) {
+				$('.duco-error').show();
+				$('.duco-error-msg').html(error.message || error.toString());
+			  });
+			  */
+			  
+			/*, function(error, result) {
+			  if (error) {
+				  $('.duco-error').show();
+				  $('.duco-error-msg').html(error.message || error.toString() );
+			  }
+			  $('.duco-error').hide();
+	  
+			  Homey.done();
+			})*/
 
-        Homey.addDevice({
-          name: "duco ",
-          data: device_data,
-          settings: settings
-        })
-          .then(function (result) {
-            $('.duco-error').hide();
-            Homey.done();
-          })
-          .catch(function (error) {
-            $('.duco-error').show();
-            $('.duco-error-msg').html(error.message || error.toString());
-          });
-        /*, function(error, result) {
-          if (error) {
-              $('.duco-error').show();
-              $('.duco-error-msg').html(error.message || error.toString() );
-          }
-          $('.duco-error').hide();
-  
-          Homey.done();
-        })*/
-
-      } else {
-        $('.duco-error').show();
-        $('.duco-error-msg').html(__('pair.nosettings'));
+      } else 
+	  {		alert("exception");
+			$('.duco-error').show();
+			$('.duco-error-msg').html(__('pair.nosettings'));
       }
 
     });
@@ -106,7 +119,11 @@
   </div>
   <div class="form-group">
     <label for="polling" data-i18n="pair.polling">Polling Frequency</label>
-    <input type="number" class="form-control" id="polling" min="2" max="3600" placeholder="5" value="5" required>
+    <input type="number" class="form-control" id="polling" min="5" max="3600" placeholder="5" value="30" required>
+  </div>
+  <div class="form-group">
+    <label for="modbus_id" data-i18n="pair.modbus_id">Modbus ID</label>
+    <input type="number" class="form-control" id="modbus_id" min="0" max="255" placeholder="1" value="1" required>
   </div>
   <div class="form-group buttons">
     <button id="connect" class="button" data-i18n="pair.connect">Connect</button>

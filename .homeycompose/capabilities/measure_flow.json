@@ -1,0 +1,44 @@
+{
+  "type": "number",
+  "title": {
+    "en": "debiet",
+    "nl": "debiet"
+  },
+  "units": {
+    "en": "%"
+  },
+  "insights": true,
+  "desc": {
+    "en": "debiet in procent (%)",
+    "nl": "debiet in percent (%)"
+  },
+  "decimals": 0,
+  "chartType": "spline",
+  "getable": true,
+  "setable": false,
+  "icon": "/assets/house.svg",
+  "uiComponent": "sensor",
+  "$flow": {
+    "triggers": [
+      {
+        "id": "measure_flow_changed",
+        "highlight": true,
+        "title": {
+          "en": "The flow changed",
+          "nl": "De debiet is veranderd"
+        },
+        "tokens": [
+          {
+            "name": "measure_flow",
+            "title": {
+              "en": "debiet",
+              "nl": "flow"
+            },
+            "type": "number",
+            "example": 25
+          }
+        ]
+      }
+    ]
+  }
+}
