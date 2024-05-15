@@ -13,5 +13,8 @@
   },
   "0.2.1": {
     "en": "added device support for iAV and contact"
+  },
+  "0.3.0": {
+    "en": "testing for TCP master discovery"
   }
 }
