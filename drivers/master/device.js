@@ -8,7 +8,7 @@ class DucoMasterModbusDevice extends Device {
 
     async onInit() {
         let self = this;
-
+		self.log("Duco init device");
 		/*Identify device and required device library*/
 		let duco_node = self.getStoreValue("duco_node");
 		let box_type  = self.getStoreValue("duco_type");

@@ -66,32 +66,33 @@ async onPair(session){
 		let client = new ModbusRTU();
 	
 		self.log(">>Init pairlistdevices");	
-		client.setTimeout( 1000 );
+		client.setTimeout( 5000 );
 		return client.connectTCP(duco_settings.address, { port: duco_settings.port })
 		 .then( async function(data) {	/*Starts in its own environment, we lost parent context here*/				
 			let node;
 			let devices = [];
-			modbus_TCP = false;	
+			let modbus_TCP = false;	
 			
 			self.log(">>Connected...");	
 			client.setTimeout( 1000 );
 			client.setID(1);		
 			let test = [];
 			
-			
+			/*Check system to be TCP or RTU*/
 			let dev_address = 100;	//check 0100 to be duco master (TCP version)			
 			await client.readInputRegisters (dev_address, 1)	//the system is creating 10 read connections here and fails on the 11th*/
-			{	.then( data =>{
-						let device_type = data.data[0];
-						if(device_type == 17){
-							self.log("System is modbus TCP-based");
-							modbus_TCP = true;
-						}
-						else{
-							self.log("System is modbus RTU-based");
-							modbus_TCP = false;
-						}
-			}	
+			.then( data =>{
+					let device_type = data.data[0];
+					if(device_type == 17){
+						self.log("System is modbus TCP-based");
+						modbus_TCP = true;
+					}
+					else{
+						self.log("System is modbus RTU-based");
+						modbus_TCP = false;
+					}
+			});
+			
 			if(modbus_TCP == false){
 				for(node=1;node<100;node++)	//try to read sequential devices
 				{	let dev_address = node*10;
@@ -263,8 +264,9 @@ async onPair(session){
 			return devices;
 		})	
 		.catch(function(e){		
-			
+			self.log("Error " + e);
 			throw new Error("Could not open device on "+duco_settings.address +":"+duco_settings.port);
+			
 		});
 		
 		client.close();	
