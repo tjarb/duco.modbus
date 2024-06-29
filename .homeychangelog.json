@@ -19,5 +19,11 @@
   },
   "0.3.1": {
     "en": "Bug fixes"
+  },
+  "0.3.2": {
+    "en": "Changed modbus-TCP address ranges for masterbox"
+  },
+  "0.3.3": {
+    "en": "changed Modbus TCP-registers offset for master box "
   }
 }
